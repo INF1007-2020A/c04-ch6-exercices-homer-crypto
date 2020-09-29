@@ -5,21 +5,44 @@
 def order(values: list = None) -> list:
     if values is None:
         # TODO: demander les valeurs ici
-        pass
+        values = []
+        while len(values) < 10:
+            values.append(input("Entre une valeur enfoiré: "))
+        sorted_values = sorted(values)
+        print(sorted_values)
 
-    return []
+
+    return sorted(values)
 
 
 def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: demander les mots ici
-        pass
+        words = []
+        mot_1 = []
+        mot_2 = []
+        chaine_1 = str(input("entre le premier mot: "))
+        chaine_min_1 = chaine_1.upper()
+        chaine_2 = str(input("entre le deuxieme mot: "))
+        chaine_min_2 = chaine_2.upper()
 
-    return False
+        for i in range(len(chaine_min_1)):
+            mot_1.append(chaine_min_1[i])
+
+        for i in range(len(chaine_min_2)):
+            mot_2.append(chaine_min_2[i])
+
+        if sorted(mot_1) == sorted(mot_2):
+            print("C'est un anagrame")
+        else:
+            print("Ce n'est pas un anagrame")
+
+    return print("meh")
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+
+    return len(set(items)) != len(items)
 
 
 def best_grades(student_grades: dict) -> dict:
