@@ -47,14 +47,29 @@ def contains_doubles(items: list) -> bool:
 
 def best_grades(student_grades: dict) -> dict:
     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
-    return {}
+    best_student = {}
+    for key, value in student_grades.items():
+        avg = sum(value) / len(value)
+        if len(best_student) == 0 or list(best_student.values())[0] < avg:
+            best_student = {key: avg}
+
+
+    return best_student
 
 
 def frequence(sentence: str) -> dict:
     # TODO: Afficher les lettres les plus fréquentes
     #       Retourner le tableau de lettres
+    dictionnaire = {}
+    nbr_lettre = 0
+    sorted_sentence = sorted(sentence)
 
-    return {}
+    for lettre in range(len(sorted_sentence)):
+        dictionnaire[sorted_sentence[lettre]] = nbr_lettre + 1
+
+
+
+    return print(sorted_sentence)
 
 
 def get_recipes():
